@@ -13,7 +13,8 @@ interface PageProps {
     searchParams: { q?: string }
 }
 
-export default async function SearchPage({ searchParams }: PageProps) {
+export default async function SearchPage(props: PageProps) {
+    const searchParams = await props.searchParams
     const query = searchParams.q
     const supabase = await createClient()
 

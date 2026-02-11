@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { format } from "date-fns"
 import { Calendar, User, FileText, Download, ArrowLeft, Share2 } from "lucide-react"
+import { ShareButton } from "@/components/share-button"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -87,7 +88,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8">
                     <div className="flex items-center">
                         <User className="mr-2 h-4 w-4" />
-                        <span className="font-medium text-foreground">{content.profiles?.full_name || "Sahej Vidhi Team"}</span>
+                        <span className="font-medium text-foreground">{content.author_name || content.profiles?.full_name || "Sahej Vidhi Team"}</span>
                     </div>
                     {content.published_at && (
                         <div className="flex items-center">
@@ -95,9 +96,9 @@ export default async function ArticlePage({ params }: PageProps) {
                             <span>{format(new Date(content.published_at), 'PPP')}</span>
                         </div>
                     )}
-                    <Button variant="ghost" size="sm" className="hidden sm:flex">
-                        <Share2 className="mr-2 h-4 w-4" /> Share
-                    </Button>
+                    <div className="hidden sm:flex">
+                        <ShareButton title={content.title} />
+                    </div>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, FilePlus, Settings, LogOut } from "lucide-react"
+import { LayoutDashboard, FilePlus, Settings, LogOut, FileText, Layers } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
@@ -26,7 +26,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     const navItems = [
         { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
         { href: "/admin/upload", label: "Create Content", icon: FilePlus },
-        // Add more here like 'Manage Categories'
+        { href: "/admin/content", label: "Manage Content", icon: FileText },
+        { href: "/admin/categories", label: "Manage Categories", icon: Layers },
     ]
 
     return (
@@ -45,8 +46,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                                     key={item.href}
                                     href={item.href}
                                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary ${pathname === item.href
-                                            ? "bg-muted text-primary"
-                                            : "text-muted-foreground"
+                                        ? "bg-muted text-primary"
+                                        : "text-muted-foreground"
                                         }`}
                                 >
                                     <item.icon className="h-4 w-4" />

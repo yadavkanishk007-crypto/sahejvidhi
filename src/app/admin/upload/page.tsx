@@ -61,6 +61,7 @@ export default function UploadPage() {
     const [summary, setSummary] = useState("")
     const [file, setFile] = useState<File | null>(null)
     const [isFeatured, setIsFeatured] = useState(false)
+    const [authorName, setAuthorName] = useState("")
 
     // Dynamic Subcategory State
     const [isCreatingSubcategory, setIsCreatingSubcategory] = useState(false)
@@ -208,7 +209,8 @@ export default function UploadPage() {
                     created_by: user.id,
                     status: 'published',
                     published_at: new Date().toISOString(),
-                    slug: title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') + '-' + Date.now().toString().slice(-4)
+                    slug: title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '') + '-' + Date.now().toString().slice(-4),
+                    author_name: authorName || null
                 })
 
             if (insertError) throw insertError
@@ -280,6 +282,15 @@ export default function UploadPage() {
                                     onChange={e => setTitle(e.target.value)}
                                     placeholder="Enter title..."
                                     required
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label>Author Name (Optional)</Label>
+                                <Input
+                                    value={authorName}
+                                    onChange={e => setAuthorName(e.target.value)}
+                                    placeholder="Enter author name..."
                                 />
                             </div>
 
