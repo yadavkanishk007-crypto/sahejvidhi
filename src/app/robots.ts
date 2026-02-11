@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/admin/', '/private/'],
         },
-        sitemap: 'https://sahej-vidhi.vercel.app/sitemap.xml', // Update with actual domain
+        sitemap: 'https://www.sahejvidhi.in/sitemap.xml', // Update with actual domain
     }
 }
