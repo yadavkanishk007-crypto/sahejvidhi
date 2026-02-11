@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const { data: content } = await supabase.from('content').select('slug, updated_at, id')
     const { data: categories } = await supabase.from('categories').select('slug, id')
 
-    const baseUrl = 'https://sahej-vidhi.vercel.app' // Update with actual domain
+    const baseUrl = 'https://www.sahejvidhi.in' // Update with actual domain
 
     const contentEntries = content?.map((item) => ({
         url: `${baseUrl}/articles/${item.slug || item.id}`,
