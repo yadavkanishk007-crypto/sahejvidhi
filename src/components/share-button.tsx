@@ -34,7 +34,7 @@ export function ShareButton({ title, url }: ShareButtonProps) {
             try {
                 await navigator.share({
                     title: title,
-                    text: `Check out "${title}" on Sahej Vidhi`,
+                    text: `Check out "${title}" on Sahaj Vidhi`,
                     url: shareUrl,
                 })
                 return
