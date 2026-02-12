@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sahej Vidhi - Indian Legal Knowledge Platform",
+  title: "Sahaj Vidhi - Indian Legal Knowledge Platform",
   description: "A structured legal knowledge and judgment repository for Indian lawyers, law students, and researchers.",
 };
 
