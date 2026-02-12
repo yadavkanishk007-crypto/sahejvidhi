@@ -11,7 +11,7 @@ export function HeroSection() {
                 <div className="flex flex-col items-center space-y-4 text-center">
                     <div className="space-y-2">
                         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                            Legal Knowledge made <span className="text-primary">Sahej</span> (Simple)
+                            Legal Knowledge made <span className="text-primary">Sahaj</span> (Simple)
                         </h1>
                         <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                             Access simplified Indian laws, judgments, and legal articles.
